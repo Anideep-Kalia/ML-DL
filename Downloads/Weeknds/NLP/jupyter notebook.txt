@@ -1,0 +1,45 @@
+# install the Jupyter Notebook
+pip install notebook
+
+
+# Run on chrome 
+jupyter notebook -> port: 8888
+
+
+# create file:
+.ipynb
+
+
+# Running code
+Run the cell: Shift + Enter
+Ctrl + Enter → run, stay on same cell
+Alt + Enter → run + insert new cell below
+
+
+# Essential Keyboard Shortcuts
+NOTE:
+Command Mode (press Esc first)
+A → insert cell above
+B → insert cell below
+D D → delete cell
+O -> close output
+M → convert cell to Markdown
+Y → convert cell to Code
+L → toggle line numbers
+Z → undo cell delete
+
+Edit Mode (inside a cell)
+Ctrl + / → comment/uncomment
+Ctrl + Shift + - → split cell
+
+# Useful Magics
+Timing: 
+    %timeit x.sum()
+Shell Commands: 
+    !ls
+    !pip install numpy
+Debug after an error
+    %debug
+Display plots inline
+    %matplotlib inline
+
