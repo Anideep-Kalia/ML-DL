@@ -1,0 +1,24 @@
+This is blog generation appliaction which uses model from AWS Bedrock
+
+FLOW: 
+client ->
+API Gateway ->
+Lambda Function ->
+AWS Bedrock + AWS S3 + AWS Sagemaker 
+
+
+AWS Sagemaker -> Deploying Foundation models
+
+In this project we have to apply layers in the lambda function as we need latest version of BOTO which we have to seperately provide as by default older version is downloaded, for that we have gone through below steps:
+1> make Pyhton libraries all inside in a folder
+2> make a zip of folder made
+3> Add this is to the service of the lambde function
+4> now this will be automatically run by the lambda before execution of code
+
+
+Adding API Gateway
+1> Create API of HTTP Post
+2> After API is created start adding the routes
+3> Add integration after making an endpoint of lambda
+4> That's now see the logs to see if we are geting the output or error
+
