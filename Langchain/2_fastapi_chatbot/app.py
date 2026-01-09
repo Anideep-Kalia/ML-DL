@@ -15,7 +15,6 @@ app=FastAPI(
     title="Langchain Server",
     version="1.0",
     decsription="A simple API Server"
-
 )
 
 add_routes(
@@ -23,6 +22,7 @@ add_routes(
     ChatOpenAI(),
     path="/openai"
 )
+
 model=ChatOpenAI()
 ##ollama llama2
 llm=Ollama(model="llama2")
