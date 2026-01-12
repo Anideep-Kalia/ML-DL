@@ -17,6 +17,8 @@ app=FastAPI(
     decsription="A simple API Server"
 )
 
+
+# this will expose the raw openAI chatmodel so we can use palyground, stream etc...
 add_routes(
     app,
     ChatOpenAI(),
@@ -24,7 +26,6 @@ add_routes(
 )
 
 model=ChatOpenAI()
-##ollama llama2
 llm=Ollama(model="llama2")
 
 prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
@@ -34,16 +35,12 @@ add_routes(
     app,
     prompt1|model,
     path="/essay"
-
-
 )
 
 add_routes(
     app,
     prompt2|llm,
     path="/poem"
-
-
 )
 
 
