@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 ## load the Groq API key
-groq_api_key=os.environ['GROQ_API_KEY']
+groq_api_key=os.environ['']
 
 if "vector" not in st.session_state:
     st.session_state.embeddings=OllamaEmbeddings()
@@ -27,7 +27,7 @@ if "vector" not in st.session_state:
 
 st.title("ChatGroq Demo")
 llm=ChatGroq(groq_api_key=groq_api_key,
-             model_name="mixtral-8x7b-32768")
+             model_name="openai/gpt-oss-120b")
 
 prompt=ChatPromptTemplate.from_template(
 """
@@ -40,6 +40,7 @@ Questions:{input}
 
 """
 )
+
 document_chain = create_stuff_documents_chain(llm, prompt)
 retriever = st.session_state.vectors.as_retriever()
 retrieval_chain = create_retrieval_chain(retriever, document_chain)

@@ -35,9 +35,7 @@ Questions:{input}
 )
 
 def vector_embedding():
-
     if "vectors" not in st.session_state:
-
         st.session_state.embeddings=OpenAIEmbeddings()
         st.session_state.loader=PyPDFDirectoryLoader("./us_census") ## Data Ingestion
         st.session_state.docs=st.session_state.loader.load() ## Document Loading
