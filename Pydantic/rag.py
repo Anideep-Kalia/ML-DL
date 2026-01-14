@@ -13,7 +13,14 @@ docs = [
     "RAG means Retrieval Augmented Generation.",
     "Pydantic enforces structured outputs from LLMs."
 ]
+
 documents = [Document(page_content=d) for d in docs]
+# FAISS doesn't store string directily it stores objects like so the above code is doing that only
+#   [
+#       Document(page_content="LangChain is a framework...", metadata={}),
+#       Document(page_content="RAG means Retrieval...", metadata={}),
+#   ]
+
 splitter = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=10)
 chunks = splitter.split_documents(documents)
 db = FAISS.from_documents(chunks, OpenAIEmbeddings())
