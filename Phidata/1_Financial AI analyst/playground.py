@@ -24,7 +24,6 @@ web_search_agent=Agent(
     instructions=["Alway include sources"],
     show_tools_calls=True,
     markdown=True,
-
 )
 
 ## Financial agent
